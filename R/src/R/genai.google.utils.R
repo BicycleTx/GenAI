@@ -2,7 +2,7 @@
 genai.google.check = function(api, model, version, proxy) {
   json.data = jsonlite::fromJSON("https://genai.gd.edu.kg/model.json")
   if (is.na(match(model, json.data$google$model))) {
-    stop(
+    warning(
       "Invalid value for model. Refer to 'available.models()' to view the supported models."
     )
   }
